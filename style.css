@@ -1,0 +1,285 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 15px;
+  font-family: inter, Arial;
+  background-color: hsl(36, 100%, 99%);
+}
+
+body{
+  max-width: 1200px;
+  margin: auto;
+}
+
+ul li{
+  list-style: none;
+}
+
+img{
+  width: 100%;
+  max-width: 100%;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+#menu-button{
+  cursor: pointer;
+}
+
+header nav{
+  opacity: 0;
+  z-index: -999;
+  transition: all 0.3s ease-in-out;
+}
+
+nav.open{
+  position: fixed;
+  background-color: #fff;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 70vw;
+  padding: 1.25rem;
+  opacity: 1;
+  z-index: 99999;
+}
+
+nav ul{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+nav ul li{
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+nav ul li:hover{
+  color: hsl(35, 77%, 62%);
+}
+
+
+
+nav #menu-close{
+  cursor: pointer;
+  outline: none;
+  border: none;
+  position: absolute;
+  right: 1.25rem;
+  top: 1.25rem;
+  background-color: transparent;
+  z-index: 99;
+}
+
+
+
+
+main{
+  padding: 0 1.5rem;
+  margin-top: 1rem;
+}
+
+.section-1 h1{
+  font-size: 4rem;
+  font-weight: 900;
+  margin: 1.5rem 0;
+  line-height: 4rem;
+  color: hsl(240, 100%, 5%);
+}
+
+.section-1 div:first-child article p{
+  line-height: 1.6rem;
+  color: hsl(236, 13%, 42%);
+  margin-bottom: 1.5rem;
+}
+
+.section-1 div:first-child article button{
+  background-color: hsl(5, 85%, 63%);
+  outline: none;
+  border: none;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.2rem;
+  transition: all 0.3s ease-in-out;
+}
+.section-1 div:first-child article button:hover{
+  background-color: hsl(240, 100%, 5%);
+  cursor: pointer;
+  color: white;
+}
+
+
+
+
+/**/
+
+.section-1 > div:last-child{
+  background-color: hsl(240, 100%, 5%);
+  color: hsl(233, 8%, 79%);
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  padding-top: 1.5rem;
+  margin-top: 4rem;
+}
+
+.section-1 > div:last-child h2{
+  color: hsl(35, 77%, 62%);
+  font-size: 2rem;
+}
+
+.section-1>div:last-child article {
+  padding: 2rem 0;
+}
+
+.section-1>div:last-child article:not(:last-child){
+  border-bottom: 1px solid hsl(236, 13%, 42%);
+}
+
+.section-1>div:last-child article h4{
+  color: white;
+  margin-bottom: 1rem;
+}
+.section-1>div:last-child article h4:hover{
+  color: hsl(35, 77%, 62%);
+  cursor:pointer;
+}
+
+.section-1>div:last-child article p{
+  line-height: 1.6rem;
+}
+
+.cards{
+  margin-top: 4rem;
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+
+.cards img{
+  width: 120px;
+}
+
+.cards article{
+  display: flex;
+  gap: 1.5rem;
+}
+
+.cards h4{
+  color: hsl(233, 8%, 79%);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.cards h6{
+  color: hsl(240, 100%, 5%);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  transition: 0.3s;
+}
+.cards h6:hover{
+  color: hsl(5, 85%, 63%);
+  cursor: pointer;
+}
+
+.cards p{
+  color: hsl(236, 13%, 42%);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+footer{
+  padding: 5rem 0;
+  text-align: center;
+}
+
+@media (min-width: 768px){
+  .cards{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 4rem;
+  }
+}
+
+@media (min-width: 1024px){
+  header{
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header nav{
+    opacity: 1;
+    z-index: auto;
+    width: 100%;
+  }
+
+  nav.open{
+    position: relative;
+    width: auto;
+    background-color: transparent;
+    padding: 0;
+    z-index: auto;
+  }
+
+  nav ul {
+    position: relative;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    transform: translateY(0%);
+  }
+
+  header nav #menu-close{
+    display: none;
+  } 
+
+  nav ul li{
+    margin: 0;
+  }
+
+  #menu-button {
+      display: none;
+    }
+
+  .section-1{
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .section-1 div:first-child article{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  .section-1 div:last-child{
+    margin: 0;
+  }
+
+  .section-1 div:first-child h1{
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  .cards{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
